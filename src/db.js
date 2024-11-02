@@ -2,7 +2,7 @@ const mongoose =  require('mongoose');
 require('dotenv').config()
 const {mongoDbUri, mongoDbName}  = require('./config/constants');
 
-mongoose.connect(mongoDbUri, { maxPoolSize: 25, dbName: mongoDbName });
+mongoose.connect(mongoDbUri, { maxPoolSize: 25, dbName: mongoDbName })
 mongoose.connection.on('error', (err) => {
   console.log(err);
   throw new Error(`unable to connect to database: ${mongoDbUri}`);

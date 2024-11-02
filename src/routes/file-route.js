@@ -1,11 +1,11 @@
 const express = require('express');
 const { createFile , deleteFile, editFile, moveFile} = require('../controllers/file-controller');
-const folderRoute = express.Router();
+const fileRoute = express.Router();
 
 
-folderRoute.post('/create',createFile);
-folderRoute.post('/move',moveFile);
-folderRoute.post('/update',editFile);
-folderRoute.post('/delete/:folderId',deleteFile);
+fileRoute.post('/create',createFile);
+fileRoute.post('/move',moveFile);
+fileRoute.post('/update',editFile);
+fileRoute.post('/delete/:folderId',deleteFile);
 
-module.exports = folderRoute;
+module.exports = fileRoute;
